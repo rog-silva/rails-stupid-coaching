@@ -1,12 +1,19 @@
-<h1>Your stupid coach</h1>
-<br>
-<FONT FACE size=5> <%= @question %> </FONT>
-<em>You</em>
-<br>
-<br>
-<FONT FACE size=5><strong><%= @answer %></strong></FONT>
-<em>Your coach</em>
-<br>
-<br>
+<h1>Stupid Coaching</h1>
 
-<%= link_to "Ask me anything else", ask_path %>
+<blockquote>
+  <p>
+    <% if @question.blank? %>
+      😶
+    <% else %>
+      <%= @question %>
+    <% end %>
+  </p>
+  <cite>You</cite>
+</blockquote>
+
+<blockquote class="coach">
+  <p><%= @answer %></p>
+  <cite>Your coach</cite>
+</blockquote>
+
+<%= link_to "Ask a new question", ask_path %>
